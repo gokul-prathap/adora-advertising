@@ -7,12 +7,12 @@ const Gallery = () => {
   const categories = ['All', 'Fashion', 'Ad Shoots', 'Posh Weddings', 'Product', 'Modelling']
   
   const portfolioItems = [
-    { id: 1, category: 'Fashion', title: 'Luxury Fashion Editorial', image: '/api/placeholder/400/600' },
-    { id: 2, category: 'Ad Shoots', title: 'Premium Brand Campaign', image: '/api/placeholder/600/400' },
-    { id: 3, category: 'Posh Weddings', title: 'Royal Wedding Collection', image: '/api/placeholder/500/700' },
-    { id: 4, category: 'Product', title: 'Luxury Product Showcase', image: '/api/placeholder/400/400' },
-    { id: 5, category: 'Modelling', title: 'Professional Portfolio', image: '/api/placeholder/450/600' },
-    { id: 6, category: 'Fashion', title: 'Haute Couture Series', image: '/api/placeholder/500/650' },
+    { id: 1, category: 'Fashion', title: 'Luxury Fashion Editorial', image: '/images/portfolio/fashion-1.jpg' },
+    { id: 2, category: 'Ad Shoots', title: 'Premium Brand Campaign', image: '/images/portfolio/ad-1.jpg' },
+    { id: 3, category: 'Posh Weddings', title: 'Royal Wedding Collection', image: '/images/portfolio/wedding-1.jpg' },
+    { id: 4, category: 'Product', title: 'Luxury Product Showcase', image: '/images/portfolio/product-1.jpg' },
+    { id: 5, category: 'Modelling', title: 'Professional Portfolio', image: '/images/portfolio/model-1.jpg' },
+    { id: 6, category: 'Fashion', title: 'Haute Couture Series', image: '/images/portfolio/fashion-2.jpg' },
   ]
   
   const filteredItems = activeFilter === 'All' 
@@ -65,10 +65,17 @@ const Gallery = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-lg bg-gray-800 aspect-[4/5]"
+              className="group relative overflow-hidden rounded-lg aspect-[4/5]"
             >
-              <div className="w-full h-full bg-gradient-to-br from-gold/20 to-charcoal flex items-center justify-center">
-                <span className="text-gold text-lg font-semibold">{item.title}</span>
+              <div 
+                className="w-full h-full bg-cover bg-center bg-gray-800"
+                style={{ 
+                  backgroundImage: `url(${item.image}), linear-gradient(135deg, #D4AF37 0%, #121212 100%)` 
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                  <span className="text-white text-lg font-semibold drop-shadow-lg">{item.title}</span>
+                </div>
               </div>
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center">
