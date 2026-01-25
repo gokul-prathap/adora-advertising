@@ -1,11 +1,38 @@
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  
+  const carouselImages = [
+    '/images/hero-1.jpg',
+    '/images/hero-2.jpg', 
+    '/images/hero-3.jpg',
+    '/images/hero-4.jpg'
+  ]
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length)
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image Placeholder */}
-      <div className="absolute inset-0 luxury-gradient">
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Background Carousel */}
+      <div className="absolute inset-0">
+        {carouselImages.map((image, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: index === currentSlide ? 1 : 0 }}
+            transition={{ duration: 1 }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Content */}
