@@ -58,9 +58,18 @@ const ReelsShowcase = () => {
         >
           <h3 className="text-2xl font-luxury text-gold mb-8">Follow Our Journey</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((item) => (
-              <SocialEmbed key={item} platform="instagram" />
-            ))}
+            <SocialEmbed 
+              platform="instagram" 
+              postUrl="https://www.instagram.com/reel/DPN640Fk44M/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" 
+            />
+            <SocialEmbed 
+              platform="instagram" 
+              postUrl="https://www.instagram.com/reel/DTPrfhEk6cp/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" 
+            />
+            <SocialEmbed 
+              platform="instagram" 
+              postUrl="https://www.instagram.com/reel/DO_LPOkkxxf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+            />
           </div>
         </motion.div>
       </div>
