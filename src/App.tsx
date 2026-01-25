@@ -4,6 +4,7 @@ import Gallery from './components/Gallery'
 import ReelsShowcase from './components/ReelsShowcase'
 import Services from './components/Services'
 import Contact from './components/Contact'
+import Chatbot from './components/Chatbot'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <ReelsShowcase />
       <Services />
       <Contact />
+      <Chatbot />
     </div>
   )
 }
