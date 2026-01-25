@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-charcoal text-white font-modern antialiased;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply backdrop-blur-md bg-charcoal/80 border-b border-gold/20;
+  }
+  
+  .luxury-gradient {
+    background: linear-gradient(135deg, #121212 0%, #1a1a1a 100%);
+  }
+  
+  .gold-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #F7E7CE 100%);
+  }
+}
